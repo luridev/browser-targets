@@ -1,0 +1,54 @@
+{
+  "name": "@protoapps/browser-targets",
+  "version": "0.1.0",
+  "description": "Core browser build targets for Baseline Widely Available",
+  "license": "MIT",
+  "repository": "github:luridev/browser-targets",
+  "homepage": "https://github.com/luridev/browser-targets#readme",
+  "bugs": "https://github.com/luridev/browser-targets/issues",
+  "author": "Anton V.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "clean": "node config/clean.js",
+    "prepublishOnly": "npm --dry-run=false run validate",
+    "test": "npm run build && node --experimental-test-module-mocks --test tests/*.test.js",
+    "test:package": "node config/package/verifyPackage.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "validate": "npm run typecheck && npm run test:package"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "baseline",
+    "browser",
+    "build",
+    "targets"
+  ],
+  "dependencies": {
+    "baseline-browser-mapping": "^2.11.26"
+  },
+  "devDependencies": {
+    "cross-spawn": "^7.0.6",
+    "lefthook": "^2.1.14",
+    "publint": "^0.3.24",
+    "typescript": "^6.0.3"
+  },
+  "allowScripts": {
+    "lefthook@2.1.14": true
+  }
+}
