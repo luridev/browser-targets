@@ -24,11 +24,13 @@
   "scripts": {
     "build": "npm run clean && tsc -p tsconfig.build.json",
     "clean": "node config/clean.js",
+    "lint": "eslint .",
     "prepublishOnly": "npm --dry-run=false run validate",
+    "release": "bumpp",
     "test": "npm run build && node --experimental-test-module-mocks --test tests/*.test.js",
     "test:package": "node config/package/verifyPackage.js",
     "typecheck": "tsc -p tsconfig.json",
-    "validate": "npm run typecheck && npm run test:package"
+    "validate": "npm run lint && npm run typecheck && npm run test:package"
   },
   "files": [
     "dist"
@@ -43,12 +45,17 @@
     "baseline-browser-mapping": "^2.11.26"
   },
   "devDependencies": {
+    "@protoapps/eslint-config": "^0.3.1",
+    "bumpp": "^12.3.0",
     "cross-spawn": "^7.0.6",
+    "eslint": "^10.6.0",
+    "globals": "^17.7.0",
     "lefthook": "^2.1.14",
     "publint": "^0.3.24",
     "typescript": "^6.0.3"
   },
   "allowScripts": {
-    "lefthook@2.1.14": true
+    "lefthook@2.1.14": true,
+    "unrs-resolver": false
   }
 }

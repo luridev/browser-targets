@@ -15,6 +15,7 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "bump.config.ts"
   ]
 }
