@@ -45,7 +45,7 @@
     "baseline-browser-mapping": "^2.11.26"
   },
   "devDependencies": {
-    "@protoapps/eslint-config": "^0.3.1",
+    "@protoapps/eslint-config": "^0.3.2",
     "bumpp": "^12.3.0",
     "cross-spawn": "^7.0.6",
     "eslint": "^10.6.0",
