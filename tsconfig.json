@@ -16,6 +16,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "commitlint.config.ts",
     "bump.config.ts"
   ]
 }

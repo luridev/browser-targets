@@ -46,6 +46,9 @@
     "baseline-browser-mapping": "^2.11.26"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@commitlint/types": "^21.2.3",
     "@protoapps/eslint-config": "^0.3.2",
     "bumpp": "^12.3.0",
     "cross-spawn": "^7.0.6",
