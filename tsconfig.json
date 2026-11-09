@@ -12,11 +12,12 @@
     "noEmit": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": []
+    "types": ["node"]
   },
   "include": [
     "src/**/*.ts",
-    "commitlint.config.ts",
-    "bump.config.ts"
+    "tests/*.ts",
+    "scripts/**/*.ts",
+    "*.config.ts"
   ]
 }
