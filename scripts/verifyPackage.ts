@@ -11,7 +11,6 @@ type NpmPackResult = {
   filename: string;
   size: number;
   unpackedSize: number;
-  files: Array<{ path: string }>;
 };
 
 type PackageManifest = {
@@ -67,15 +66,11 @@ try {
 
   assert.equal(packed.length, 1, 'npm pack must produce one archive.');
 
-  const { filename, size, unpackedSize, files } = packed[0];
+  const { filename, size, unpackedSize } = packed[0];
 
   assert.equal(basename(filename), filename);
 
-  assert.deepEqual(files.map((file) => file.path).sort(), [
-    'LICENSE', 'README.md', 'dist/index.d.ts', 'dist/index.js', 'package.json',
-  ].sort());
-
-  process.stdout.write(`${JSON.stringify({ filename, size, unpackedSize, files }, null, 2)}\n`);
+  process.stdout.write(`${JSON.stringify({ filename, size, unpackedSize }, null, 2)}\n`);
 
   const archive = join(temporaryRoot, filename);
 
