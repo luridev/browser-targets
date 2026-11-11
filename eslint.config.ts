@@ -8,4 +8,10 @@ export default createProtoConfig(
     files: ['**/*.{js,ts}'],
     languageOptions: { globals: globals.node },
   },
+  {
+    files: ['src/index.ts', 'src/getBrowserTargets.ts'],
+    rules: {
+      '@typescript-eslint/no-restricted-imports': 'off',
+    },
+  },
 );
