@@ -1,6 +1,6 @@
 {
   "name": "@protoapps/browser-targets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Core browser build targets for Baseline Widely Available",
   "license": "MIT",
   "repository": "github:luridev/browser-targets",
