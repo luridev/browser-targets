@@ -60,14 +60,16 @@ describe('getBrowserTargets', () => {
   });
 
   it('compares numeric components and treats missing components as zero', () => {
-    for (const [desktop, mobile, expected] of [
+    const cases: Array<[desktop: string, mobile: string, expected: string]> = [
       ['99', '100', '99'],
       ['123.1', '124', '123.1'],
       ['123.10', '123.9', '123.9'],
       ['123.1.10', '123.1.2', '123.1.2'],
       ['123.0.1', '123', '123'],
       ['123.1.0', '123.1', '123.1.0'],
-    ]) {
+    ];
+
+    for (const [desktop, mobile, expected] of cases) {
       versions = versions.map((entry) => {
         if (entry.browser === 'chrome' || entry.browser === 'firefox') {
           return { ...entry, version: desktop };
